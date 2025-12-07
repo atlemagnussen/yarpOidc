@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="https://storage.googleapis.com/static-logout/images/favicon.svg">
+    <title>@ViewData["Title"] OIDC</title>
+</head>
+<body>
+    <style>
+        :root {
+            --background: #1b1d26;
+            --secondary-background: #2f323f;
+            --color: #F4F4F4;
+            --link-color: #0053c0;
+            --logo-main-color: #0071ec;
+            --blue: #3e96ff;
+            --logo-top-left-color: #6eb3ff 
+        }
+        html {
+            font-family: monospace;
+            font-size: 14px;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            height: 100%;
+            background-color: var(--background);
+            color: var(--color);
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto 1fr auto;
+            grid-template-areas:
+                'header'
+                'main'
+                'footer';
+        }
+        * {
+            box-sizing: border-box;
+        }
+        header {
+            grid-area: header;
+            padding: 0.2rem;
+            display: block;
+            overflow: hidden;
+        }
+        main {
+            background-color: var(--background);
+            color: var(--color);
+            grid-area: main;
+            padding: 0.5rem;
+            display: block;
+        }
+        footer {
+            grid-area: footer;
+            max-width: 100vw;
+            padding: 0.2rem;
+        }
+        ul {
+            list-style-type: none;
+        }
+        ul li {
+            list-style: none;
+        }
+        a,a:visited {
+            color: var(--link-color);
+        }
+        .centered-content {
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+    <header>
+        <a href="/">
+            <h2>Home</h2>
+        </a>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+    <footer>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,75 @@
+@page
+@model YarpOidc.Pages.Login.Index
+
+<style>
+    article#login-page {
+        height: 90%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    section {
+        width: 300px;
+    }
+    .login-btn {
+        background-color: white;
+        &:hover { 
+            background-color: var(--color);
+        }
+        font-family: open sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+        color: #5E5E5E;
+        height: 41px;
+        width: 100%;
+        box-shadow: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        padding: 0 0 0 12px;
+        margin: 0;
+        border: 1px #8C8C8C;
+        outline: 0;
+        border-radius: 0;
+        cursor: pointer;
+        svg {
+            width: 30px;
+            height: 30px;
+        }
+    }
+</style>
+<article id="login-page" class="centered-content">
+    @if(Model.AppUser is null)
+    {
+        <section class="external">
+            <header>
+                <h2>Authentication</h2>
+            </header>
+            <form id="external-login-form" asp-page="/ExternalLogin/Index" asp-route-returnUrl="@Model.ReturnUrl" method="POST">
+                <button type="submit" class="login-btn" name="provider" value="external" title="Log in OIDC">
+                    <span>Sign in with OIDC</span>
+                </button>
+            </form>
+            <partial name="_ValidationSummary" />
+        </section>
+    }
+    else
+    {
+        <section>
+            <h2>Logged in</h2>
+            <p>id: @Model.AppUser.Id</p>
+            <p>userName: @Model.AppUser.UserName</p>
+
+            <form asp-page="/Login/Index">
+                <div class="form-group logout">
+                    <button type="submit" id="yes" class="btn-logout" asp-page-handler="Logout" title="Log out">
+                        Log out
+                    </button>
+                </div>
+            </form>
+        </section>
+    }
+</article>
