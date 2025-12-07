@@ -28,11 +28,15 @@ builder.ConfigureCookies();
 
 builder.Services.AddAuthorization(options =>
 {
-    options.FallbackPolicy = new AuthorizationPolicyBuilder()
-        .RequireAuthenticatedUser()
-        .AddAuthenticationSchemes(IdentityConstants.ApplicationScheme)
-        .Build();
+    options.AddPolicy("Protection", policy =>
+    {
+        policy.RequireAuthenticatedUser()
+            .AddAuthenticationSchemes(IdentityConstants.ApplicationScheme);
+    });
 });
+
+builder.Services.AddReverseProxy()
+    .LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));
 
 var app = builder.Build();
 
@@ -45,10 +49,6 @@ if (!app.Environment.IsDevelopment())
     app.UseHttpsRedirection();
 }
 
-// app.UseForwardedHeaders(new ForwardedHeadersOptions
-// {
-//     ForwardedHeaders = ForwardedHeaders.XForwardedProto
-// });
 app.UseRouting();
 app.UseAuthorization();
 
@@ -68,33 +68,10 @@ if (!string.IsNullOrWhiteSpace(authServer))
 if (!string.IsNullOrWhiteSpace(authClient))
     app.Logger.LogInformation("AuthClient={authClient}", authClient);
 
-//app.UseDefaultFiles();
-// app.UseStaticFiles(new StaticFileOptions
-// {
-//     FileProvider = folderProvider,
-//     RequestPath = "",
-    
-//     OnPrepareResponse = async context =>
-//     {
-//         var httpContext = context.Context;
-//         var user = httpContext.User;
-        
-//         if (user.Identity is null || !user.Identity.IsAuthenticated)
-//         {
-//             httpContext.Response.StatusCode = StatusCodes.Status401Unauthorized;
-//             httpContext.Response.Redirect("/Login");
-//         }
-        
-//         if (!user.HasClaim("customer_id", "1"))
-//         {
-//             httpContext.Response.StatusCode = StatusCodes.Status403Forbidden;
-//             httpContext.Response.Redirect("/AccessDenied");
-//         }
-//     }
-// });
-
 
 app.MapRazorPages()
     .WithStaticAssets();
+
+app.MapReverseProxy();
 
 app.Run();
