@@ -10,5 +10,5 @@ dotnet run --environment Production
 ```sh
 podman build -f Containerfile --tag yarp-oidc:0.1 .
 
-docker run --env-file .env.prod -d --rm -p 5000:5000 yarp-oidc:0.1
+podman run --env-file .env -d --rm -p 8000:8080 yarp-oidc:0.1
 ```
