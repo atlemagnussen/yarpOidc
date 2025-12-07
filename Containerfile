@@ -9,14 +9,14 @@ WORKDIR /src
 
 COPY . .
 
-RUN dotnet restore server.csproj \
- && dotnet build server.csproj -c $BUILD_CONFIGURATION -o /app/build
+RUN dotnet restore yarpOidc.csproj \
+ && dotnet build yarpOidc.csproj -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish server.csproj -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish yarpOidc.csproj -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "server.dll"]
+ENTRYPOINT ["dotnet", "yarpOidc.dll"]
