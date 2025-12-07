@@ -5,10 +5,10 @@
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:8000",
+      "applicationUrl": "http://0.0.0.0:8000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "STATIC_FOLDER_PATH": "/Users/atle/dev/yarp-oidc/wwwroot",
+        "STATIC_FOLDER_PATH": "/home/atle/dev/yarpOidc/wwwroot",
         "AUTH_SERVER":"https://id.logout.work",
         "AUTH_CLIENT": "web"
       }
