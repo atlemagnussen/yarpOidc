@@ -23,7 +23,7 @@ if (builder.Environment.IsProduction())
 {
     builder.Services.Configure<ForwardedHeadersOptions>(options =>
     {
-        options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto | ForwardedHeaders.XForwardedHost;
+        options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
         // options.KnownIPNetworks.Clear();
         // options.KnownProxies.Clear();
         options.ForwardLimit = 2;
