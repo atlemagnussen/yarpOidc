@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.HttpLogging;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.FileProviders;
@@ -6,6 +7,13 @@ using YarpOidc;
 
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddRazorPages();
+
+builder.Services.AddHttpLogging(options =>
+{
+    options.LoggingFields = HttpLoggingFields.RequestPropertiesAndHeaders;
+});
 
 if (builder.Environment.IsProduction())
 {
@@ -17,7 +25,7 @@ if (builder.Environment.IsProduction())
     });
 }
 
-builder.Services.AddRazorPages();
+
 
 var authServer = Environment.GetEnvironmentVariable("AUTH_SERVER");
 var authClient = Environment.GetEnvironmentVariable("AUTH_CLIENT");
@@ -41,13 +49,26 @@ builder.Services.AddReverseProxy()
 var app = builder.Build();
 
 app.UseExceptionHandler("/Error");
+app.UseForwardedHeaders();
+
+app.UseHttpLogging();
+
+app.Use(async (context, next) =>
+{
+    app.Logger.LogInformation("Request RemoteIp: {RemoteIpAddress}",
+        context.Connection.RemoteIpAddress);
+
+    await next(context);
+});
 
 if (!app.Environment.IsDevelopment())
 {
-    app.UseForwardedHeaders();
+    
     app.UseHsts();
-    app.UseHttpsRedirection();
+    //app.UseHttpsRedirection();
 }
+
+
 
 app.UseRouting();
 app.UseAuthorization();
