@@ -1,0 +1,253 @@
+info: yarpOidc[0]
+      AuthServer=https://id.logout.work
+info: yarpOidc[0]
+      AuthClient=web
+dbug: Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory[12]
+      Registered model binder providers, in the following order: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider
+dbug: Microsoft.AspNetCore.Mvc.Razor.Compilation.DefaultViewCompiler[3]
+      Initializing Razor view compiler with compiled view: '/Pages/AccessDenied.cshtml'.
+dbug: Microsoft.AspNetCore.Mvc.Razor.Compilation.DefaultViewCompiler[3]
+      Initializing Razor view compiler with compiled view: '/Pages/Error.cshtml'.
+dbug: Microsoft.AspNetCore.Mvc.Razor.Compilation.DefaultViewCompiler[3]
+      Initializing Razor view compiler with compiled view: '/Pages/ExternalLogin/Index.cshtml'.
+dbug: Microsoft.AspNetCore.Mvc.Razor.Compilation.DefaultViewCompiler[3]
+      Initializing Razor view compiler with compiled view: '/Pages/Login/Index.cshtml'.
+dbug: Microsoft.AspNetCore.Mvc.Razor.Compilation.DefaultViewCompiler[3]
+      Initializing Razor view compiler with compiled view: '/Pages/Shared/_Layout.cshtml'.
+dbug: Microsoft.AspNetCore.Mvc.Razor.Compilation.DefaultViewCompiler[3]
+      Initializing Razor view compiler with compiled view: '/Pages/Shared/_ValidationSummary.cshtml'.
+dbug: Microsoft.AspNetCore.Mvc.Razor.Compilation.DefaultViewCompiler[3]
+      Initializing Razor view compiler with compiled view: '/Pages/_ViewImports.cshtml'.
+dbug: Microsoft.AspNetCore.Mvc.Razor.Compilation.DefaultViewCompiler[3]
+      Initializing Razor view compiler with compiled view: '/Pages/_ViewStart.cshtml'.
+warn: Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository[60]
+      Storing keys in a directory '/home/app/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+info: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[62]
+      User profile is available. Using '/home/app/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+info: Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider[1]
+      Loading proxy data from config.
+dbug: Yarp.ReverseProxy.Management.ProxyConfigManager[24]
+      Destination 'destination1' has been added.
+dbug: Yarp.ReverseProxy.Forwarder.ForwarderHttpClientFactory[45]
+      New client created for cluster 'cluster1'.
+dbug: Yarp.ReverseProxy.Management.ProxyConfigManager[21]
+      Cluster 'cluster1' has been added.
+dbug: Yarp.ReverseProxy.Management.ProxyConfigManager[27]
+      Route 'route1' has been added.
+dbug: Microsoft.Extensions.Hosting.Internal.Host[1]
+      Hosting starting
+dbug: Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver[53]
+      Repository contains no viable default key. Caller should generate a key with immediate activation.
+dbug: Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider[57]
+      Policy resolution states that a new key should be added to the key ring.
+info: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[58]
+      Creating key {b4ec478b-dc25-4c67-914e-d2c1cd139a77} with creation date 2025-12-12 23:13:36Z, activation date 2025-12-12 23:13:36Z, and expiration date 2026-03-12 23:13:36Z.
+dbug: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[32]
+      Descriptor deserializer type for key {b4ec478b-dc25-4c67-914e-d2c1cd139a77} is 'Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'.
+dbug: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[34]
+      No key escrow sink found. Not writing key {b4ec478b-dc25-4c67-914e-d2c1cd139a77} to escrow.
+warn: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[35]
+      No XML encryptor configured. Key {b4ec478b-dc25-4c67-914e-d2c1cd139a77} may be persisted to storage in unencrypted form.
+info: Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository[39]
+      Writing data to file '/home/app/.aspnet/DataProtection-Keys/key-b4ec478b-dc25-4c67-914e-d2c1cd139a77.xml'.
+dbug: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[23]
+      Key cache expiration token triggered by 'CreateNewKey' operation.
+dbug: Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository[37]
+      Reading data from file '/home/app/.aspnet/DataProtection-Keys/key-b4ec478b-dc25-4c67-914e-d2c1cd139a77.xml'.
+dbug: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[18]
+      Found key {b4ec478b-dc25-4c67-914e-d2c1cd139a77}.
+dbug: Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver[13]
+      Considering key {b4ec478b-dc25-4c67-914e-d2c1cd139a77} with expiration date 2026-03-12 23:13:36Z as default key.
+dbug: Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ManagedAuthenticatedEncryptorFactory[11]
+      Using managed symmetric algorithm 'System.Security.Cryptography.Aes'.
+dbug: Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ManagedAuthenticatedEncryptorFactory[10]
+      Using managed keyed hash algorithm 'System.Security.Cryptography.HMACSHA256'.
+dbug: Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider[2]
+      Using key {b4ec478b-dc25-4c67-914e-d2c1cd139a77} as the default key.
+dbug: Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService[65]
+      Key ring with default key {b4ec478b-dc25-4c67-914e-d2c1cd139a77} was loaded during application startup.
+dbug: Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware[7]
+      Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+dbug: Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware[0]
+      Wildcard detected, all requests with hosts will be allowed.
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://[::]:8080
+dbug: Microsoft.AspNetCore.Hosting.Diagnostics[13]
+      Loaded hosting startup assembly yarpOidc
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /app
+dbug: Microsoft.Extensions.Hosting.Internal.Host[2]
+      Hosting started
+dbug: Microsoft.AspNetCore.Server.Kestrel.Connections[39]
+      Connection id "0HNHPQGEEBTHP" accepted.
+dbug: Microsoft.AspNetCore.Server.Kestrel.Connections[1]
+      Connection id "0HNHPQGEEBTHP" started.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://test.logout.work/ - - -
+dbug: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler[9]
+      AuthenticationScheme: Identity.Application was not authenticated.
+info: Microsoft.AspNetCore.HttpLogging.HttpLoggingMiddleware[1]
+      Request:
+      Protocol: HTTP/1.1
+      Method: GET
+      Scheme: https
+      PathBase: 
+      Path: /
+      Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+      Connection: close
+      Host: test.logout.work
+      User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+      Accept-Encoding: gzip, deflate, br, zstd
+      Accept-Language: en-GB,en-US;q=0.9,en;q=0.8,nb;q=0.7
+      Referer: [Redacted]
+      Upgrade-Insecure-Requests: [Redacted]
+      X-Original-Proto: http
+      sec-ch-ua: [Redacted]
+      sec-ch-ua-mobile: [Redacted]
+      sec-ch-ua-platform: [Redacted]
+      DNT: 1
+      sec-fetch-site: [Redacted]
+      sec-fetch-mode: [Redacted]
+      sec-fetch-user: [Redacted]
+      sec-fetch-dest: [Redacted]
+      priority: [Redacted]
+      X-Original-For: [::ffff:192.168.1.2]:57968
+info: yarpOidc[0]
+      Request RemoteIp: fda9:9699:faa:cda5:9c:25f4:bbb2:3b60
+dbug: Microsoft.AspNetCore.Routing.Matching.DfaMatcher[1001]
+      1 candidate(s) found for the request path '/'
+dbug: Microsoft.AspNetCore.Routing.Matching.DfaMatcher[1005]
+      Endpoint 'route1' with route pattern '{**catch-all}' is valid for the request path '/'
+dbug: Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware[1]
+      Request matched endpoint 'route1'
+dbug: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler[9]
+      AuthenticationScheme: Identity.Application was not authenticated.
+dbug: Microsoft.AspNetCore.Authorization.AuthorizationMiddleware[0]
+      Policy authentication schemes Identity.Application did not succeed
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed. These requirements were not met:
+      DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+info: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler[12]
+      AuthenticationScheme: Identity.Application was challenged.
+dbug: Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets[6]
+      Connection id "0HNHPQGEEBTHP" received FIN.
+dbug: Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets[7]
+      Connection id "0HNHPQGEEBTHP" sending FIN because: "The Socket transport's send loop completed gracefully."
+dbug: Microsoft.AspNetCore.Server.Kestrel.Connections[10]
+      Connection id "0HNHPQGEEBTHP" disconnecting.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET https://test.logout.work/ - 302 0 - 55.1391ms
+dbug: Microsoft.AspNetCore.Server.Kestrel.Connections[2]
+      Connection id "0HNHPQGEEBTHP" stopped.
+dbug: Microsoft.AspNetCore.Server.Kestrel.Connections[39]
+      Connection id "0HNHPQGEEBTHQ" accepted.
+dbug: Microsoft.AspNetCore.Server.Kestrel.Connections[1]
+      Connection id "0HNHPQGEEBTHQ" started.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://test.logout.work/Login?ReturnUrl=%2F - - -
+dbug: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler[9]
+      AuthenticationScheme: Identity.Application was not authenticated.
+info: Microsoft.AspNetCore.HttpLogging.HttpLoggingMiddleware[1]
+      Request:
+      Protocol: HTTP/1.1
+      Method: GET
+      Scheme: https
+      PathBase: 
+      Path: /Login
+      Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+      Connection: close
+      Host: test.logout.work
+      User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+      Accept-Encoding: gzip, deflate, br, zstd
+      Accept-Language: en-GB,en-US;q=0.9,en;q=0.8,nb;q=0.7
+      Referer: [Redacted]
+      Upgrade-Insecure-Requests: [Redacted]
+      X-Original-Proto: http
+      DNT: 1
+      sec-fetch-site: [Redacted]
+      sec-fetch-mode: [Redacted]
+      sec-fetch-user: [Redacted]
+      sec-fetch-dest: [Redacted]
+      sec-ch-ua: [Redacted]
+      sec-ch-ua-mobile: [Redacted]
+      sec-ch-ua-platform: [Redacted]
+      priority: [Redacted]
+      X-Original-For: [::ffff:192.168.1.2]:57978
+info: yarpOidc[0]
+      Request RemoteIp: fda9:9699:faa:cda5:9c:25f4:bbb2:3b60
+dbug: Microsoft.AspNetCore.Routing.Matching.DfaMatcher[1001]
+      2 candidate(s) found for the request path '/Login'
+dbug: Microsoft.AspNetCore.Routing.Matching.DfaMatcher[1005]
+      Endpoint '/Login/Index' with route pattern 'Login' is valid for the request path '/Login'
+dbug: Microsoft.AspNetCore.Routing.Matching.DfaMatcher[1005]
+      Endpoint 'route1' with route pattern '{**catch-all}' is valid for the request path '/Login'
+dbug: Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware[1]
+      Request matched endpoint '/Login/Index'
+dbug: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[15]
+      Static files was skipped as the request already matched an endpoint.
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/Login/Index'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[103]
+      Route matched with {page = "/Login/Index"}. Executing page /Login/Index
+dbug: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[1]
+      Execution plan of authorization filters (in the following order): Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.AutoValidateAntiforgeryTokenAuthorizationFilter
+dbug: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[1]
+      Execution plan of resource filters (in the following order): Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter
+dbug: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[1]
+      Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)
+dbug: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[1]
+      Execution plan of exception filters (in the following order): None
+dbug: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[1]
+      Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter
+dbug: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[101]
+      Executing page model factory for page Server.Pages.Login.Pages_Login_Index (yarpOidc)
+dbug: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[102]
+      Executed page model factory for page Server.Pages.Login.Pages_Login_Index (yarpOidc)
+dbug: Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder[22]
+      Attempting to bind parameter 'returnUrl' of type 'System.String' ...
+dbug: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinder[44]
+      Attempting to bind parameter 'returnUrl' of type 'System.String' using the name 'returnUrl' in request data ...
+dbug: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinder[45]
+      Done attempting to bind parameter 'returnUrl' of type 'System.String'.
+dbug: Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder[23]
+      Done attempting to bind parameter 'returnUrl' of type 'System.String'.
+dbug: Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder[26]
+      Attempting to validate the bound parameter 'returnUrl' of type 'System.String' ...
+dbug: Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder[27]
+      Done attempting to validate the bound parameter 'returnUrl' of type 'System.String'.
+dbug: Microsoft.AspNetCore.Mvc.ViewFeatures.CookieTempDataProvider[1]
+      The temp data cookie .AspNetCore.Mvc.CookieTempDataProvider was not found.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[105]
+      Executing handler method YarpOidc.Pages.Login.Index.OnGetAsync - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[108]
+      Executed handler method OnGetAsync, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+dbug: Microsoft.AspNetCore.Routing.DefaultLinkGenerator[100]
+      Found the endpoints /ExternalLogin/Index for address (returnUrl=[/],page=[/ExternalLogin/Index])
+dbug: Microsoft.AspNetCore.Routing.DefaultLinkGenerator[102]
+      Successfully processed template ExternalLogin for /ExternalLogin/Index resulting in /ExternalLogin and ?returnUrl=%2F
+dbug: Microsoft.AspNetCore.Routing.DefaultLinkGenerator[105]
+      Link generation succeeded for endpoints /ExternalLogin/Index with result /ExternalLogin?returnUrl=%2F
+dbug: Microsoft.AspNetCore.Antiforgery.DefaultAntiforgery[5]
+      A new antiforgery cookie token was created.
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
+      View lookup cache miss for view '_ValidationSummary' in controller '(null)'.
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
+      View lookup cache miss for view '_Layout' in controller '(null)'.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[104]
+      Executed page /Login/Index in 72.5841ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint '/Login/Index'
+dbug: Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets[6]
+      Connection id "0HNHPQGEEBTHQ" received FIN.
+dbug: Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets[7]
+      Connection id "0HNHPQGEEBTHQ" sending FIN because: "The Socket transport's send loop completed gracefully."
+dbug: Microsoft.AspNetCore.Server.Kestrel.Connections[10]
+      Connection id "0HNHPQGEEBTHQ" disconnecting.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET https://test.logout.work/Login?ReturnUrl=%2F - 200 - text/html;+charset=utf-8 109.3813ms
+dbug: Microsoft.AspNetCore.Server.Kestrel.Connections[2]
+      Connection id "0HNHPQGEEBTHQ" stopped.
