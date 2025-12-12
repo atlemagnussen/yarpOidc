@@ -13,6 +13,9 @@ builder.Services.AddRazorPages();
 builder.Services.AddHttpLogging(options =>
 {
     options.LoggingFields = HttpLoggingFields.RequestPropertiesAndHeaders;
+
+    options.RequestHeaders.Add("X-Original-Proto");
+    options.RequestHeaders.Add("X-Original-For");
 });
 
 if (builder.Environment.IsProduction())
