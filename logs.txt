@@ -41,31 +41,31 @@ dbug: Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver[53]
 dbug: Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider[57]
       Policy resolution states that a new key should be added to the key ring.
 info: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[58]
-      Creating key {7a854e0a-09b0-4435-b208-7fe504b08189} with creation date 2025-12-12 23:18:14Z, activation date 2025-12-12 23:18:14Z, and expiration date 2026-03-12 23:18:14Z.
+      Creating key {5dbdfc47-7d51-41ff-8919-bf703bae07d7} with creation date 2025-12-12 23:27:57Z, activation date 2025-12-12 23:27:57Z, and expiration date 2026-03-12 23:27:57Z.
 dbug: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[32]
-      Descriptor deserializer type for key {7a854e0a-09b0-4435-b208-7fe504b08189} is 'Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'.
+      Descriptor deserializer type for key {5dbdfc47-7d51-41ff-8919-bf703bae07d7} is 'Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'.
 dbug: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[34]
-      No key escrow sink found. Not writing key {7a854e0a-09b0-4435-b208-7fe504b08189} to escrow.
+      No key escrow sink found. Not writing key {5dbdfc47-7d51-41ff-8919-bf703bae07d7} to escrow.
 warn: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[35]
-      No XML encryptor configured. Key {7a854e0a-09b0-4435-b208-7fe504b08189} may be persisted to storage in unencrypted form.
+      No XML encryptor configured. Key {5dbdfc47-7d51-41ff-8919-bf703bae07d7} may be persisted to storage in unencrypted form.
 info: Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository[39]
-      Writing data to file '/home/app/.aspnet/DataProtection-Keys/key-7a854e0a-09b0-4435-b208-7fe504b08189.xml'.
+      Writing data to file '/home/app/.aspnet/DataProtection-Keys/key-5dbdfc47-7d51-41ff-8919-bf703bae07d7.xml'.
 dbug: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[23]
       Key cache expiration token triggered by 'CreateNewKey' operation.
 dbug: Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository[37]
-      Reading data from file '/home/app/.aspnet/DataProtection-Keys/key-7a854e0a-09b0-4435-b208-7fe504b08189.xml'.
+      Reading data from file '/home/app/.aspnet/DataProtection-Keys/key-5dbdfc47-7d51-41ff-8919-bf703bae07d7.xml'.
 dbug: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[18]
-      Found key {7a854e0a-09b0-4435-b208-7fe504b08189}.
+      Found key {5dbdfc47-7d51-41ff-8919-bf703bae07d7}.
 dbug: Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver[13]
-      Considering key {7a854e0a-09b0-4435-b208-7fe504b08189} with expiration date 2026-03-12 23:18:14Z as default key.
+      Considering key {5dbdfc47-7d51-41ff-8919-bf703bae07d7} with expiration date 2026-03-12 23:27:57Z as default key.
 dbug: Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ManagedAuthenticatedEncryptorFactory[11]
       Using managed symmetric algorithm 'System.Security.Cryptography.Aes'.
 dbug: Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ManagedAuthenticatedEncryptorFactory[10]
       Using managed keyed hash algorithm 'System.Security.Cryptography.HMACSHA256'.
 dbug: Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider[2]
-      Using key {7a854e0a-09b0-4435-b208-7fe504b08189} as the default key.
+      Using key {5dbdfc47-7d51-41ff-8919-bf703bae07d7} as the default key.
 dbug: Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService[65]
-      Key ring with default key {7a854e0a-09b0-4435-b208-7fe504b08189} was loaded during application startup.
+      Key ring with default key {5dbdfc47-7d51-41ff-8919-bf703bae07d7} was loaded during application startup.
 dbug: Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware[7]
       Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
 dbug: Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware[0]
@@ -83,9 +83,9 @@ info: Microsoft.Hosting.Lifetime[0]
 dbug: Microsoft.Extensions.Hosting.Internal.Host[2]
       Hosting started
 dbug: Microsoft.AspNetCore.Server.Kestrel.Connections[39]
-      Connection id "0HNHPQIVJLO7G" accepted.
+      Connection id "0HNHPQOKNPR8H" accepted.
 dbug: Microsoft.AspNetCore.Server.Kestrel.Connections[1]
-      Connection id "0HNHPQIVJLO7G" started.
+      Connection id "0HNHPQOKNPR8H" started.
 info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
       Request starting HTTP/1.1 GET http://test.logout.work/ - - -
 dbug: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler[9]
@@ -103,7 +103,6 @@ info: Microsoft.AspNetCore.HttpLogging.HttpLoggingMiddleware[1]
       User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
       Accept-Encoding: gzip, deflate, br, zstd
       Accept-Language: en-GB,en-US;q=0.9,en;q=0.8,nb;q=0.7
-      Cookie: [Redacted]
       Referer: [Redacted]
       Upgrade-Insecure-Requests: [Redacted]
       X-Original-Proto: http
@@ -116,7 +115,7 @@ info: Microsoft.AspNetCore.HttpLogging.HttpLoggingMiddleware[1]
       sec-fetch-user: [Redacted]
       sec-fetch-dest: [Redacted]
       priority: [Redacted]
-      X-Original-For: [::ffff:192.168.1.2]:48778
+      X-Original-For: [::ffff:192.168.1.2]:50192
 info: yarpOidc[0]
       Request RemoteIp: fda9:9699:faa:cda5:9c:25f4:bbb2:3b60
 dbug: Microsoft.AspNetCore.Routing.Matching.DfaMatcher[1001]
@@ -135,19 +134,19 @@ info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
 info: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler[12]
       AuthenticationScheme: Identity.Application was challenged.
 dbug: Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets[6]
-      Connection id "0HNHPQIVJLO7G" received FIN.
+      Connection id "0HNHPQOKNPR8H" received FIN.
 dbug: Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets[7]
-      Connection id "0HNHPQIVJLO7G" sending FIN because: "The Socket transport's send loop completed gracefully."
+      Connection id "0HNHPQOKNPR8H" sending FIN because: "The Socket transport's send loop completed gracefully."
 dbug: Microsoft.AspNetCore.Server.Kestrel.Connections[10]
-      Connection id "0HNHPQIVJLO7G" disconnecting.
+      Connection id "0HNHPQOKNPR8H" disconnecting.
 info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
-      Request finished HTTP/1.1 GET https://test.logout.work/ - 302 0 - 55.3776ms
+      Request finished HTTP/1.1 GET https://test.logout.work/ - 302 0 - 55.1773ms
 dbug: Microsoft.AspNetCore.Server.Kestrel.Connections[2]
-      Connection id "0HNHPQIVJLO7G" stopped.
+      Connection id "0HNHPQOKNPR8H" stopped.
 dbug: Microsoft.AspNetCore.Server.Kestrel.Connections[39]
-      Connection id "0HNHPQIVJLO7H" accepted.
+      Connection id "0HNHPQOKNPR8I" accepted.
 dbug: Microsoft.AspNetCore.Server.Kestrel.Connections[1]
-      Connection id "0HNHPQIVJLO7H" started.
+      Connection id "0HNHPQOKNPR8I" started.
 info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
       Request starting HTTP/1.1 GET http://test.logout.work/Login?ReturnUrl=%2F - - -
 dbug: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler[9]
@@ -165,7 +164,6 @@ info: Microsoft.AspNetCore.HttpLogging.HttpLoggingMiddleware[1]
       User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
       Accept-Encoding: gzip, deflate, br, zstd
       Accept-Language: en-GB,en-US;q=0.9,en;q=0.8,nb;q=0.7
-      Cookie: [Redacted]
       Referer: [Redacted]
       Upgrade-Insecure-Requests: [Redacted]
       X-Original-Proto: http
@@ -178,7 +176,7 @@ info: Microsoft.AspNetCore.HttpLogging.HttpLoggingMiddleware[1]
       sec-ch-ua-mobile: [Redacted]
       sec-ch-ua-platform: [Redacted]
       priority: [Redacted]
-      X-Original-For: [::ffff:192.168.1.2]:48786
+      X-Original-For: [::ffff:192.168.1.2]:50196
 info: yarpOidc[0]
       Request RemoteIp: fda9:9699:faa:cda5:9c:25f4:bbb2:3b60
 dbug: Microsoft.AspNetCore.Routing.Matching.DfaMatcher[1001]
@@ -233,28 +231,6 @@ dbug: Microsoft.AspNetCore.Routing.DefaultLinkGenerator[102]
       Successfully processed template ExternalLogin for /ExternalLogin/Index resulting in /ExternalLogin and ?returnUrl=%2F
 dbug: Microsoft.AspNetCore.Routing.DefaultLinkGenerator[105]
       Link generation succeeded for endpoints /ExternalLogin/Index with result /ExternalLogin?returnUrl=%2F
-dbug: Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository[37]
-      Reading data from file '/home/app/.aspnet/DataProtection-Keys/key-7a854e0a-09b0-4435-b208-7fe504b08189.xml'.
-dbug: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[18]
-      Found key {7a854e0a-09b0-4435-b208-7fe504b08189}.
-dbug: Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver[13]
-      Considering key {7a854e0a-09b0-4435-b208-7fe504b08189} with expiration date 2026-03-12 23:18:14Z as default key.
-dbug: Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ManagedAuthenticatedEncryptorFactory[11]
-      Using managed symmetric algorithm 'System.Security.Cryptography.Aes'.
-dbug: Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ManagedAuthenticatedEncryptorFactory[10]
-      Using managed keyed hash algorithm 'System.Security.Cryptography.HMACSHA256'.
-dbug: Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider[2]
-      Using key {7a854e0a-09b0-4435-b208-7fe504b08189} as the default key.
-fail: Microsoft.AspNetCore.Antiforgery.DefaultAntiforgery[7]
-      An exception was thrown while deserializing the token.
-      Microsoft.AspNetCore.Antiforgery.AntiforgeryValidationException: The antiforgery token could not be decrypted.
-       ---> System.Security.Cryptography.CryptographicException: The key {b4ec478b-dc25-4c67-914e-d2c1cd139a77} was not found in the key ring. For more information go to https://aka.ms/aspnet/dataprotectionwarning
-         at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
-         at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
-         at Microsoft.AspNetCore.Antiforgery.DefaultAntiforgeryTokenSerializer.Deserialize(String serializedToken)
-         --- End of inner exception stack trace ---
-         at Microsoft.AspNetCore.Antiforgery.DefaultAntiforgeryTokenSerializer.Deserialize(String serializedToken)
-         at Microsoft.AspNetCore.Antiforgery.DefaultAntiforgery.GetCookieTokenDoesNotThrow(HttpContext httpContext)
 dbug: Microsoft.AspNetCore.Antiforgery.DefaultAntiforgery[5]
       A new antiforgery cookie token was created.
 dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
@@ -262,23 +238,23 @@ dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
 dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
       View lookup cache miss for view '_Layout' in controller '(null)'.
 info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[104]
-      Executed page /Login/Index in 81.287ms
+      Executed page /Login/Index in 72.4922ms
 info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
       Executed endpoint '/Login/Index'
 dbug: Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets[6]
-      Connection id "0HNHPQIVJLO7H" received FIN.
+      Connection id "0HNHPQOKNPR8I" received FIN.
 dbug: Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets[7]
-      Connection id "0HNHPQIVJLO7H" sending FIN because: "The Socket transport's send loop completed gracefully."
+      Connection id "0HNHPQOKNPR8I" sending FIN because: "The Socket transport's send loop completed gracefully."
 dbug: Microsoft.AspNetCore.Server.Kestrel.Connections[10]
-      Connection id "0HNHPQIVJLO7H" disconnecting.
+      Connection id "0HNHPQOKNPR8I" disconnecting.
 info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
-      Request finished HTTP/1.1 GET https://test.logout.work/Login?ReturnUrl=%2F - 200 - text/html;+charset=utf-8 117.4650ms
+      Request finished HTTP/1.1 GET https://test.logout.work/Login?ReturnUrl=%2F - 200 - text/html;+charset=utf-8 108.5872ms
 dbug: Microsoft.AspNetCore.Server.Kestrel.Connections[2]
-      Connection id "0HNHPQIVJLO7H" stopped.
+      Connection id "0HNHPQOKNPR8I" stopped.
 dbug: Microsoft.AspNetCore.Server.Kestrel.Connections[39]
-      Connection id "0HNHPQIVJLO7I" accepted.
+      Connection id "0HNHPQOKNPR8J" accepted.
 dbug: Microsoft.AspNetCore.Server.Kestrel.Connections[1]
-      Connection id "0HNHPQIVJLO7I" started.
+      Connection id "0HNHPQOKNPR8J" started.
 info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
       Request starting HTTP/1.1 POST http://test.logout.work/ExternalLogin?returnUrl=%2F - application/x-www-form-urlencoded 200
 dbug: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler[9]
@@ -313,7 +289,7 @@ info: Microsoft.AspNetCore.HttpLogging.HttpLoggingMiddleware[1]
       sec-fetch-user: [Redacted]
       sec-fetch-dest: [Redacted]
       priority: [Redacted]
-      X-Original-For: [::ffff:192.168.1.2]:48796
+      X-Original-For: [::ffff:192.168.1.2]:48878
 info: yarpOidc[0]
       Request RemoteIp: fda9:9699:faa:cda5:9c:25f4:bbb2:3b60
 dbug: Microsoft.AspNetCore.Routing.Matching.DfaMatcher[1001]
@@ -341,9 +317,9 @@ dbug: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[1]
 dbug: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[1]
       Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter
 dbug: Microsoft.AspNetCore.Server.Kestrel[25]
-      Connection id "0HNHPQIVJLO7I", Request id "0HNHPQIVJLO7I:00000001": started reading request body.
+      Connection id "0HNHPQOKNPR8J", Request id "0HNHPQOKNPR8J:00000001": started reading request body.
 dbug: Microsoft.AspNetCore.Server.Kestrel[26]
-      Connection id "0HNHPQIVJLO7I", Request id "0HNHPQIVJLO7I:00000001": done reading request body.
+      Connection id "0HNHPQOKNPR8J", Request id "0HNHPQOKNPR8J:00000001": done reading request body.
 dbug: Microsoft.AspNetCore.Antiforgery.DefaultAntiforgery[2]
       Antiforgery successfully validated a request.
 dbug: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[101]
@@ -389,7 +365,7 @@ info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[108]
 info: Microsoft.AspNetCore.Mvc.ChallengeResult[1]
       Executing ChallengeResult with authentication schemes (external).
 info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[104]
-      Executed page /ExternalLogin/Index in 51.112ms
+      Executed page /ExternalLogin/Index in 56.8249ms
 info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
       Executed endpoint '/ExternalLogin/Index'
 dbug: Microsoft.AspNetCore.Routing.Matching.DfaMatcher[1001]
@@ -430,7 +406,7 @@ info: Microsoft.AspNetCore.HttpLogging.HttpLoggingMiddleware[1]
       sec-fetch-user: [Redacted]
       sec-fetch-dest: [Redacted]
       priority: [Redacted]
-      X-Original-For: [::ffff:192.168.1.2]:48796
+      X-Original-For: [::ffff:192.168.1.2]:48878
 info: yarpOidc[0]
       Request RemoteIp: fda9:9699:faa:cda5:9c:25f4:bbb2:3b60
 dbug: Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware[3]
@@ -462,12 +438,12 @@ info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[109]
 dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
       View lookup cache miss for view '_Layout' in controller '(null)'.
 info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[104]
-      Executed page /Error in 8.8629ms
+      Executed page /Error in 8.7404ms
 info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
       Executed endpoint '/Error'
 fail: Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware[1]
       An unhandled exception has occurred while executing the request.
-      System.InvalidOperationException: IDX20803: Unable to obtain configuration from: 'https://id.logout.work/.well-known/openid-configuration'. Will retry at '12/12/2025 23:18:25 +00:00'. Exception: 'System.IO.IOException: IDX20804: Unable to retrieve document from: '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+      System.InvalidOperationException: IDX20803: Unable to obtain configuration from: 'https://id.logout.work/.well-known/openid-configuration'. Will retry at '12/12/2025 23:28:33 +00:00'. Exception: 'System.IO.IOException: IDX20804: Unable to retrieve document from: '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
        ---> System.Net.Http.HttpRequestException: Connection refused (id.logout.work:443)
        ---> System.Net.Sockets.SocketException (111): Connection refused
          at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
@@ -533,19 +509,19 @@ fail: Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware[1]
          at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
          at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
          at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
-         at Program.<>c__DisplayClass0_0.<<<Main>$>b__3>d.MoveNext() in /src/Program.cs:line 67
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__3>d.MoveNext() in /src/Program.cs:line 68
       --- End of stack trace from previous location ---
          at Microsoft.AspNetCore.HttpLogging.HttpLoggingMiddleware.InvokeInternal(HttpContext context, HttpLoggingOptions options, HttpLoggingAttribute loggingAttribute, HttpLoggingFields loggingFields)
          at Microsoft.AspNetCore.HttpLogging.HttpLoggingMiddleware.InvokeInternal(HttpContext context, HttpLoggingOptions options, HttpLoggingAttribute loggingAttribute, HttpLoggingFields loggingFields)
          at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
 info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
-      Request finished HTTP/1.1 POST https://test.logout.work/ExternalLogin?returnUrl=%2F - 500 - text/html;+charset=utf-8 88.2281ms
-dbug: Microsoft.AspNetCore.Server.Kestrel.Connections[10]
-      Connection id "0HNHPQIVJLO7I" disconnecting.
+      Request finished HTTP/1.1 POST https://test.logout.work/ExternalLogin?returnUrl=%2F - 500 - text/html;+charset=utf-8 93.8634ms
 dbug: Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets[6]
-      Connection id "0HNHPQIVJLO7I" received FIN.
+      Connection id "0HNHPQOKNPR8J" received FIN.
 dbug: Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets[7]
-      Connection id "0HNHPQIVJLO7I" sending FIN because: "The Socket transport's send loop completed gracefully."
+      Connection id "0HNHPQOKNPR8J" sending FIN because: "The Socket transport's send loop completed gracefully."
+dbug: Microsoft.AspNetCore.Server.Kestrel.Connections[10]
+      Connection id "0HNHPQOKNPR8J" disconnecting.
 dbug: Microsoft.AspNetCore.Server.Kestrel.Connections[2]
-      Connection id "0HNHPQIVJLO7I" stopped.
+      Connection id "0HNHPQOKNPR8J" stopped.
 atle@atle-small:~/dev/yarpOidc$ 

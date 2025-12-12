@@ -24,8 +24,9 @@ if (builder.Environment.IsProduction())
     builder.Services.Configure<ForwardedHeadersOptions>(options =>
     {
         options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
-        options.KnownIPNetworks.Clear();
-        options.KnownProxies.Clear();
+        //options.KnownIPNetworks.Clear();
+        options.KnownIPNetworks.Add(new System.Net.IPNetwork(IPAddress.Parse("192.168.1.0"), 24));
+        options.KnownProxies.Add(IPAddress.Parse("127.0.0.1"));
         options.AllowedHosts.Clear();
         //options.ForwardLimit = 2;
         //options.KnownProxies.Add(IPAddress.Parse("192.168.1.2"));
