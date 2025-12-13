@@ -53,7 +53,8 @@ builder.Services.AddAuthorization(options =>
 });
 
 builder.Services.AddReverseProxy()
-    .LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));
+    .LoadFromConfig(builder.Configuration.GetSection("ReverseProxyRadarr"))
+    .LoadFromConfig(builder.Configuration.GetSection("ReverseProxySonarr"));
 
 var app = builder.Build();
 
