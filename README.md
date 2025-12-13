@@ -9,12 +9,12 @@ Protect any web resource with proper authentication and without exposing it
 
 ## Why
 
-Lets say you have a web app on http://192.168.1.101:8000 at your hmoe that you want make more accessible, even outside your home.
+Lets say you have a web app on http://192.168.1.101:8000 at your home that you want make more accessible, even outside your home.
 
-But it has none/weak protection as in proper authentication.
+But it has none/weak protection/authentication.
 
-With this setup you can require authentication from any OIDC authority.
-Auhentication will be httpOnly secure cookie which is as good as it gets. 
+With this setup you can require authentication from any OIDC authority.  
+Auhentication will be httpOnly secure cookie, which is as good as it gets. 
 
 ## Setup
 
