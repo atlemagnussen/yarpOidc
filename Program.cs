@@ -23,10 +23,11 @@ builder.Services.AddHttpLogging(options =>
 builder.Services.Configure<ForwardedHeadersOptions>(options =>
 {
     options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
-    //options.KnownIPNetworks.Clear();
-    options.KnownIPNetworks.Add(new System.Net.IPNetwork(IPAddress.Parse("192.168.1.0"), 24));
-    options.KnownProxies.Add(IPAddress.Parse("127.0.0.1"));
-    options.AllowedHosts.Clear();
+    // options.KnownIPNetworks.Clear();
+    // options.KnownProxies.Clear();
+    // options.AllowedHosts.Clear();
+    //options.KnownIPNetworks.Add(new System.Net.IPNetwork(IPAddress.Parse("192.168.1.0"), 24));
+    //options.KnownProxies.Add(IPAddress.Parse("127.0.0.1"));
     //options.ForwardLimit = 2;
     //options.KnownProxies.Add(IPAddress.Parse("192.168.1.2"));
 });
@@ -58,22 +59,11 @@ app.UseForwardedHeaders();
 
 app.UseHttpLogging();
 
-app.Use(async (context, next) =>
-{
-    app.Logger.LogInformation("Request RemoteIp: {RemoteIpAddress}",
-        context.Connection.RemoteIpAddress);
-
-    await next(context);
-});
-
 if (!app.Environment.IsDevelopment())
 {
-    
     app.UseHsts();
-    //app.UseHttpsRedirection();
+    app.UseHttpsRedirection();
 }
-
-
 
 app.UseRouting();
 app.UseAuthorization();
