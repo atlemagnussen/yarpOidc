@@ -1,6 +1,16 @@
 # YARP OIDC
 
-ASP.NET Core Reverse proxy server with OIDC protection
+Example implementation of. 
+
+ASP.NET Core Reverse proxy with external OIDC authentication 
+
+- Configures ASP.NET Identity with one external OIDC authority
+- Adds [YARP](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/servers/yarp/yarp-overview?view=aspnetcore-10.0) from either appsettings or another file
+
+This gives you a way of protecting any web resource with proper authentication and not expose the internal app
+
+
+## run/build
 
 ```sh
 dotnet run --environment Production

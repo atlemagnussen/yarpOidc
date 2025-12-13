@@ -9,18 +9,15 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorPages();
 
-builder.Services.AddHttpLogging(options =>
-{
-    options.LoggingFields = HttpLoggingFields.RequestPropertiesAndHeaders;
-
+// for debug
+//builder.Services.AddHttpLogging(options =>
+//{
+ //   options.LoggingFields = HttpLoggingFields.RequestPropertiesAndHeaders;
     // to see behind:
-    // X-Forwarded-For: [Redacted]
     // X-Forwarded-Proto: [Redacted]
-    options.RequestHeaders.Add("X-Original-Proto");
-    options.RequestHeaders.Add("X-Original-For");
-    options.RequestHeaders.Add("X-Forwarded-For");
-    options.RequestHeaders.Add("X-Forwarded-Proto");
-});
+    //options.RequestHeaders.Add("X-Forwarded-For");
+    //options.RequestHeaders.Add("X-Forwarded-Proto");
+//});
 
 
 builder.Services.Configure<ForwardedHeadersOptions>(options =>
@@ -31,18 +28,13 @@ builder.Services.Configure<ForwardedHeadersOptions>(options =>
     options.KnownIPNetworks.Clear();
     options.KnownProxies.Clear();
     
+    // to not trust all add known proxies or networks
     // options.KnownIPNetworks.Add(new System.Net.IPNetwork(IPAddress.Parse("192.168.1.0"), 24));
     // options.KnownIPNetworks.Add(new System.Net.IPNetwork(IPAddress.Parse("10.89.0.0"), 24));
-    // options.KnownProxies.Add(IPAddress.Parse("192.168.1.2"));
-    
+    // options.KnownProxies.Add(IPAddress.Parse("192.168.1.2"));    
     //options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto | ForwardedHeaders.XForwardedHost;
-    
     // same as appsettings.json "AllowedHosts": "*"
     // options.AllowedHosts.Clear();
-    //options.KnownIPNetworks.Add(new System.Net.IPNetwork(IPAddress.Parse("192.168.1.0"), 24));
-    //options.KnownProxies.Add(IPAddress.Parse("127.0.0.1"));
-    //options.ForwardLimit = 2;
-    //options.KnownProxies.Add(IPAddress.Parse("192.168.1.2"));
 });
 
 
@@ -70,7 +62,8 @@ var app = builder.Build();
 app.UseExceptionHandler("/Error");
 app.UseForwardedHeaders();
 
-app.UseHttpLogging();
+// for debug
+// app.UseHttpLogging();
 
 if (!app.Environment.IsDevelopment())
 {
