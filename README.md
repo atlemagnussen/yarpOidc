@@ -13,7 +13,7 @@ Lets say you have a web app on http://192.168.1.101:8000 at your home that you w
 
 But it has none/weak protection/authentication.
 
-With this setup you can require authentication from any OIDC authority.  
+With this setup you can require authentication for every request to your internal app by your OIDC authority of choice.  
 Auhentication will be httpOnly secure cookie, which is as good as it gets. 
 
 ## Setup
