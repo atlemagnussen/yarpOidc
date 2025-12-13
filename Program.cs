@@ -71,6 +71,8 @@ if (!app.Environment.IsDevelopment())
 app.UseRouting();
 app.UseAuthorization();
 
+app.Logger.LogInformation("yarpConfigPath={0}", yarpConfigPath);
+
 var staticFolderPath = Environment.GetEnvironmentVariable("STATIC_FOLDER_PATH");
 if (!string.IsNullOrWhiteSpace(staticFolderPath))
 {
