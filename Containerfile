@@ -1,5 +1,5 @@
 FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS base
-USER app
+
 WORKDIR /app
 EXPOSE 8080
 
@@ -20,6 +20,7 @@ ARG BUILD_CONFIGURATION=Release
 RUN dotnet publish yarpOidc.csproj -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
+USER appch
 WORKDIR /app
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "yarpOidc.dll"]
