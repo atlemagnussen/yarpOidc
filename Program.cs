@@ -15,8 +15,13 @@ builder.Services.AddHttpLogging(options =>
 {
     options.LoggingFields = HttpLoggingFields.RequestPropertiesAndHeaders;
 
+    // to see behind:
+    // X-Forwarded-For: [Redacted]
+    // X-Forwarded-Proto: [Redacted]
     options.RequestHeaders.Add("X-Original-Proto");
     options.RequestHeaders.Add("X-Original-For");
+    options.RequestHeaders.Add("X-Forwarded-For");
+    options.RequestHeaders.Add("X-Forwarded-Proto");
 });
 
 
@@ -71,7 +76,7 @@ if (!app.Environment.IsDevelopment())
 app.UseRouting();
 app.UseAuthorization();
 
-app.Logger.LogInformation("yarpConfigPath={0}", yarpConfigPath);
+app.Logger.LogInformation("yarpConfigPath={yarpConfigPath}", yarpConfigPath);
 
 var staticFolderPath = Environment.GetEnvironmentVariable("STATIC_FOLDER_PATH");
 if (!string.IsNullOrWhiteSpace(staticFolderPath))
