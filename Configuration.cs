@@ -18,7 +18,7 @@ public static class Config
                 options.SignIn.RequireConfirmedAccount = false;
             })
             .AddUserStore<DummyUserStore>()
-            .AddDefaultTokenProviders() // Keeps the token providers you were asking about
+            .AddDefaultTokenProviders()
             .AddSignInManager();
 
         builder.Services.AddAuthentication(options =>
@@ -45,11 +45,11 @@ public static class Config
             options.ClientId = authClient;
             options.ResponseType = "code";
             options.SaveTokens = true;
-            options.GetClaimsFromUserInfoEndpoint = true; // to get customer_id ++
+            options.GetClaimsFromUserInfoEndpoint = true; // extra claims outside of token
 
             options.SignInScheme = IdentityConstants.ExternalScheme;
             options.SignOutScheme = IdentityConstants.ApplicationScheme;
-            options.CallbackPath = "/signin-oidc"; // default - allow this in auth server
+            options.CallbackPath = "/signin-oidc"; // default - allow redirect to this in your OIDC server
 
             options.Scope.Add("openid");
             options.Scope.Add("profile");
@@ -64,7 +64,6 @@ public static class Config
 
             options.ClaimActions.MapJsonKey("role", "role", "role"); 
             options.ClaimActions.MapUniqueJsonKey("name", "name", "name");
-            options.ClaimActions.MapUniqueJsonKey("customer_id", "customer_id", "customer_id");
             
             options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
             {
