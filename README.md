@@ -7,7 +7,7 @@ This is a paid feature on for example Nginx
 Combination of two technologies:
 
 - [ASP.NET Identity](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/configure-oidc-web-authentication) with one external OIDC authority
-- [YARP reverse proxy](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/servers/yarp/yarp-overview) YARP has more features than showcased here
+- [YARP](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/servers/yarp/yarp-overview) YARP is the reverse proxy powering [Azure's frontend fleet](https://devblogs.microsoft.com/dotnet/bringing-kestrel-and-yarp-to-azure-app-services/)
 
 Protect any web resource with proper authentication
 
