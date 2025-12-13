@@ -1,5 +1,3 @@
-using System.Net;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.HttpLogging;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Identity;
@@ -28,13 +26,18 @@ builder.Services.AddHttpLogging(options =>
 builder.Services.Configure<ForwardedHeadersOptions>(options =>
 {
     options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
-    options.KnownIPNetworks.Add(new System.Net.IPNetwork(IPAddress.Parse("192.168.1.0"), 24));
-    options.KnownIPNetworks.Add(new System.Net.IPNetwork(IPAddress.Parse("10.89.0.0"), 24));
-    options.KnownProxies.Add(IPAddress.Parse("192.168.1.2"));
+    
+    // clear them to trust all proxies
+    options.KnownIPNetworks.Clear();
+    options.KnownProxies.Clear();
+    
+    // options.KnownIPNetworks.Add(new System.Net.IPNetwork(IPAddress.Parse("192.168.1.0"), 24));
+    // options.KnownIPNetworks.Add(new System.Net.IPNetwork(IPAddress.Parse("10.89.0.0"), 24));
+    // options.KnownProxies.Add(IPAddress.Parse("192.168.1.2"));
     
     //options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto | ForwardedHeaders.XForwardedHost;
-    // options.KnownIPNetworks.Clear();
-    // options.KnownProxies.Clear();
+    
+    // same as appsettings.json "AllowedHosts": "*"
     // options.AllowedHosts.Clear();
     //options.KnownIPNetworks.Add(new System.Net.IPNetwork(IPAddress.Parse("192.168.1.0"), 24));
     //options.KnownProxies.Add(IPAddress.Parse("127.0.0.1"));
