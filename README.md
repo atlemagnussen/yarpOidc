@@ -17,7 +17,7 @@ Lets say you have a web app on http://192.168.1.101:8000 at your home LAN that y
 
 But it has no proper protection/authentication mechanism
 
-With this setup you can require authentication for every request to multiple of your internal apps by your OIDC authority of choice.  
+With this setup you can require authentication for every request to multiple of your internal apps, enforced by your OIDC authority of choice.  
 Auhentication will be httpOnly secure cookie, which is as good as it gets. 
 
 ## Setup
