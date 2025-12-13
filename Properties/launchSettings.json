@@ -10,7 +10,8 @@
         "ASPNETCORE_ENVIRONMENT": "Development",
         "STATIC_FOLDER_PATH": "/home/atle/dev/yarpOidc/wwwroot",
         "AUTH_SERVER":"https://id.logout.work",
-        "AUTH_CLIENT": "web"
+        "AUTH_CLIENT": "web",
+        "YARP_CONFIG_PATH": "/Users/atle/dev/yarp-oidc/yarp.json"
       }
     },
     "https": {

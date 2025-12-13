@@ -38,6 +38,7 @@ builder.Services.Configure<ForwardedHeadersOptions>(options =>
 
 var authServer = Environment.GetEnvironmentVariable("AUTH_SERVER");
 var authClient = Environment.GetEnvironmentVariable("AUTH_CLIENT");
+var yarpConfigPath = Environment.GetEnvironmentVariable("YARP_CONFIG_PATH");
 
 builder.AddOidcAuthentication(authServer, authClient);
 
@@ -52,8 +53,7 @@ builder.Services.AddAuthorization(options =>
     });
 });
 
-builder.Services.AddReverseProxy()
-    .LoadFromConfig(builder.Configuration.GetSection("ReverseProxyArr"));
+builder.ConfigureYarp(yarpConfigPath);
 
 var app = builder.Build();
 

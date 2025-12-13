@@ -105,4 +105,21 @@ public static class Config
             options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
         });
     }
+
+    internal static void ConfigureYarp(this WebApplicationBuilder builder, string? yarpConfigFilePath)
+    {
+        if (!string.IsNullOrWhiteSpace(yarpConfigFilePath)  && Path.Exists(yarpConfigFilePath))
+        {
+            builder.Configuration.AddJsonFile(
+                yarpConfigFilePath,
+                optional: true,
+                reloadOnChange: true
+            );
+        }
+
+        var configSection = builder.Configuration.GetSection("ReverseProxy");
+        var test = configSection.ToString();
+        builder.Services.AddReverseProxy()
+            .LoadFromConfig(configSection);
+    }
 }

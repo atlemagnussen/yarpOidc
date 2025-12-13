@@ -20,6 +20,7 @@ ARG BUILD_CONFIGURATION=Release
 RUN dotnet publish yarpOidc.csproj -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
+VOLUME ["/data"]
 USER app
 WORKDIR /app
 COPY --from=publish /app/publish .
