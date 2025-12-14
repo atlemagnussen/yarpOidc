@@ -1,8 +1,6 @@
 # YARP OIDC
 
-ASP.NET Core Reverse proxy with external OIDC authentication  
-
-This is a paid feature on for example Nginx
+Example of YARP Reverse proxy with external Open ID Connect authentication 
 
 Combination of two technologies:
 
@@ -11,34 +9,42 @@ Combination of two technologies:
 
 Protect any web resource with proper authentication
 
-## Why
+## Usecase
 
-Lets say you have a web app on http://192.168.1.101:8000 at your home LAN that you want make more accessible, even outside your home.
+Lets say you run web app http://192.168.1.101:8000 in your home LAN. Now you want make it more accessible, even outside your home.
 
-But it has no proper protection/authentication mechanism
+But it has no proper protection/authentication mechanism. So you want to wrap it in something that enables authentication
 
 With this setup you can require authentication for every request to multiple of your internal apps, enforced by your OIDC authority of choice.  
 Auhentication will be httpOnly secure cookie, which is as good as it gets. 
+
+You can do this with Nginx Plus as well, but then you have to pay.
 
 ## Setup
 
 ### 1. Outer reverse proxy 
 
-Use another reverse proxy in front, like nginx [nginx example config](./nginx.conf)  
-Set up a domain (or several) with TLS, for example `https://yarp.example.com` and point them to yarpOidc
+In my experiment I still used Nginx reverse proxy in the front with TLS cert set up.  
+Of course you can also add TLS in ASP.NET and therefore also on YARP
 
-### 2. inner reverse proxy
+[nginx example of one site `https://yarp.example.com`](./nginx.conf)  
 
-This is where yarpOidc comes in.
+Point one or more sites to your YARP OIDC service
+
+### 2. Inner reverse proxy
+
+the YARP OIDC instance
 
 environment variables
 
 ```sh
-AUTH_SERVER=https://id.example.com # authentication authority
-AUTH_CLIENT=authapp                # clientId
+OIDC_SERVER=https://id.example.com # authentication authority
+OIDC_CLIENT=authapp                # client
 YARP_CONFIG_PATH=/data/yarp.json   # easier in container, map /data volume since yarp config is too verbose for using environment vars
 STATIC_FOLDER_PATH=/optional/path/to/fallback/static/html
 ```
+
+some OIDC server requires secrets, like Google. 
 
 example of yarp.json - see more on [YARP Docs](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/servers/yarp/config-files)
 
@@ -92,6 +98,8 @@ This implementation trusts all forwarding proxies, but you can easily change tha
 ```sh
 dotnet run --environment Production
 ```
+
+or build container
 
 ```sh
 podman build -f Containerfile --tag yarp-oidc:0.1 .

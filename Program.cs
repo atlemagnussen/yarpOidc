@@ -22,6 +22,7 @@ builder.Services.AddRazorPages();
 
 builder.Services.Configure<ForwardedHeadersOptions>(options =>
 {
+    // | ForwardedHeaders.XForwardedHost seems to be not needed
     options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
     
     // clear them to trust all proxies
@@ -30,19 +31,18 @@ builder.Services.Configure<ForwardedHeadersOptions>(options =>
     
     // to not trust all add known proxies or networks
     // options.KnownIPNetworks.Add(new System.Net.IPNetwork(IPAddress.Parse("192.168.1.0"), 24));
-    // options.KnownIPNetworks.Add(new System.Net.IPNetwork(IPAddress.Parse("10.89.0.0"), 24));
     // options.KnownProxies.Add(IPAddress.Parse("192.168.1.2"));    
-    //options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto | ForwardedHeaders.XForwardedHost;
+
     // same as appsettings.json "AllowedHosts": "*"
     // options.AllowedHosts.Clear();
 });
 
 
-var authServer = Environment.GetEnvironmentVariable("AUTH_SERVER");
-var authClient = Environment.GetEnvironmentVariable("AUTH_CLIENT");
+var oidcServer = Environment.GetEnvironmentVariable("OIDC_SERVER");
+var oidcClient = Environment.GetEnvironmentVariable("OIDC_CLIENT");
 var yarpConfigPath = Environment.GetEnvironmentVariable("YARP_CONFIG_PATH");
 
-builder.AddOidcAuthentication(authServer, authClient);
+builder.AddOidcAuthentication(oidcServer, oidcClient);
 
 builder.ConfigureCookies();
 
@@ -87,10 +87,10 @@ if (!string.IsNullOrWhiteSpace(staticFolderPath))
 else
     app.UseFileServer(); // wwwroot
 
-if (!string.IsNullOrWhiteSpace(authServer))
-    app.Logger.LogInformation("AuthServer={authServer}", authServer);
-if (!string.IsNullOrWhiteSpace(authClient))
-    app.Logger.LogInformation("AuthClient={authClient}", authClient);
+if (!string.IsNullOrWhiteSpace(oidcServer))
+    app.Logger.LogInformation("oidcServer={oidcServer}", oidcServer);
+if (!string.IsNullOrWhiteSpace(oidcClient))
+    app.Logger.LogInformation("oidcClient={oidcClient}", oidcClient);
 
 
 app.MapRazorPages()
