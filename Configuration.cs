@@ -6,9 +6,9 @@ namespace YarpOidc;
 
 public static class Config
 {
-    public static void AddOidcAuthentication(this WebApplicationBuilder builder, string? authServer, string? authClient)
+    public static void AddOidcAuthentication(this WebApplicationBuilder builder, string? authority, string? clientId, string? secret = null)
     {
-        if (string.IsNullOrWhiteSpace(authServer) || string.IsNullOrWhiteSpace(authClient))
+        if (string.IsNullOrWhiteSpace(authority) || string.IsNullOrWhiteSpace(clientId))
             return; // disabled
         
         builder.Services
@@ -41,8 +41,9 @@ public static class Config
         })
         .AddOpenIdConnect("external", "External", options =>
         {
-            options.Authority = authServer;
-            options.ClientId = authClient;
+            options.Authority = authority;
+            options.ClientId = clientId;
+            options.ClientSecret = secret;
             options.ResponseType = "code";
             options.SaveTokens = true;
             options.GetClaimsFromUserInfoEndpoint = true; // extra claims outside of token

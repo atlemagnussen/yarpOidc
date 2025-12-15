@@ -5,7 +5,7 @@ Example of YARP Reverse proxy with external Open ID Connect authentication
 Combination of two technologies:
 
 - [ASP.NET Identity](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/configure-oidc-web-authentication) with one external OIDC authority
-- [YARP](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/servers/yarp/yarp-overview) YARP is the reverse proxy powering [Azure's frontend fleet](https://devblogs.microsoft.com/dotnet/bringing-kestrel-and-yarp-to-azure-app-services/)
+- [YARP](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/servers/yarp/yarp-overview) is the reverse proxy powering [Azure's frontend fleet](https://devblogs.microsoft.com/dotnet/bringing-kestrel-and-yarp-to-azure-app-services/)
 
 Protect any web resource with proper authentication
 
@@ -15,17 +15,17 @@ Lets say you run web app http://192.168.1.101:8000 in your home LAN. Now you wan
 
 But it has no proper protection/authentication mechanism. So you want to wrap it in something that enables authentication
 
-With this setup you can require authentication for every request to multiple of your internal apps, enforced by your OIDC authority of choice.  
-Auhentication will be httpOnly secure cookie, which is as good as it gets. 
+Combining YARP with OIDC you can require authentication for every request to multiple apps, enforced by your OIDC authority of choice.  
+Auhentication will be httpOnly secure cookie.
 
-You can do this with Nginx Plus as well, but then you have to pay.
+You can achieve this with Nginx Plus as well, but then you have to pay.
 
 ## Setup
 
 ### 1. Outer reverse proxy 
 
 In my experiment I still used Nginx reverse proxy in the front with TLS cert set up.  
-Of course you can also add TLS in ASP.NET and therefore also on YARP
+You can add TLS directly in ASP.NET and therefore also on YARP, and skip this piece entirely
 
 [nginx example of one site `https://yarp.example.com`](./nginx.conf)  
 
@@ -44,7 +44,10 @@ YARP_CONFIG_PATH=/data/yarp.json   # easier in container, map /data volume since
 STATIC_FOLDER_PATH=/optional/path/to/fallback/static/html
 ```
 
-some OIDC server requires secrets, like Google. 
+some OIDC servers requires secrets, like Google
+```sh
+OIDC_SECRET=xxx
+```
 
 example of yarp.json - see more on [YARP Docs](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/servers/yarp/config-files)
 

@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.HttpLogging;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.FileProviders;
@@ -40,9 +39,9 @@ builder.Services.Configure<ForwardedHeadersOptions>(options =>
 
 var oidcServer = Environment.GetEnvironmentVariable("OIDC_SERVER");
 var oidcClient = Environment.GetEnvironmentVariable("OIDC_CLIENT");
-var yarpConfigPath = Environment.GetEnvironmentVariable("YARP_CONFIG_PATH");
+var oidcSecret = Environment.GetEnvironmentVariable("OIDC_SECRET");
 
-builder.AddOidcAuthentication(oidcServer, oidcClient);
+builder.AddOidcAuthentication(oidcServer, oidcClient, oidcSecret);
 
 builder.ConfigureCookies();
 
@@ -55,6 +54,7 @@ builder.Services.AddAuthorization(options =>
     });
 });
 
+var yarpConfigPath = Environment.GetEnvironmentVariable("YARP_CONFIG_PATH");
 builder.ConfigureYarp(yarpConfigPath);
 
 var app = builder.Build();
