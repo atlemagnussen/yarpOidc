@@ -4,8 +4,9 @@ Example of YARP Reverse proxy with external Open ID Connect authentication
 
 Combination of two technologies:
 
-- [ASP.NET Identity](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/configure-oidc-web-authentication) with one external OIDC authority
 - [YARP](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/servers/yarp/yarp-overview) is the reverse proxy powering [Azure's frontend fleet](https://devblogs.microsoft.com/dotnet/bringing-kestrel-and-yarp-to-azure-app-services/)
+- [ASP.NET Identity](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/configure-oidc-web-authentication) with one external OIDC authority
+
 
 Protect any web resource with proper authentication
 
@@ -24,12 +25,14 @@ You can achieve this with Nginx Plus as well, but then you have to pay.
 
 ### 1. Outer reverse proxy 
 
-In my experiment I still used Nginx reverse proxy in the front with TLS cert set up.  
-You can add TLS directly in ASP.NET and therefore also on YARP, and skip this piece entirely
+In my experiment I run YARP in podman and therefore didn't manage to route port 80/443 directly
+
+You *can* add TLS directly in ASP.NET and therefore also on YARP
+
+So, Nginx as the outer proxy with TLS and the domains pointing down to the YARP instance
 
 [nginx example of one site `https://yarp.example.com`](./nginx.conf)  
 
-Point one or more sites to your YARP OIDC service
 
 ### 2. Inner reverse proxy
 
