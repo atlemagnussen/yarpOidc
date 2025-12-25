@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using YarpOidc.Model;
 
 namespace YarpOidc;
@@ -44,7 +46,7 @@ public static class Config
             options.Authority = authority;
             options.ClientId = clientId;
             options.ClientSecret = secret;
-            options.ResponseType = "code";
+            options.ResponseType = OpenIdConnectResponseType.Code;
             options.SaveTokens = true;
             options.GetClaimsFromUserInfoEndpoint = true; // extra claims outside of token
 
@@ -121,5 +123,14 @@ public static class Config
         var test = configSection.ToString();
         builder.Services.AddReverseProxy()
             .LoadFromConfig(configSection);
+    }
+
+    internal static void ConfigureDataProtection(this WebApplicationBuilder builder)
+    {
+        if (!Path.Exists("/data"))
+            return;
+
+        builder.Services.AddDataProtection()
+            .PersistKeysToFileSystem(new DirectoryInfo("/data"));
     }
 }

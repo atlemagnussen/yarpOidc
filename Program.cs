@@ -45,6 +45,8 @@ builder.AddOidcAuthentication(oidcServer, oidcClient, oidcSecret);
 
 builder.ConfigureCookies();
 
+builder.ConfigureDataProtection();
+
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("Protection", policy =>
