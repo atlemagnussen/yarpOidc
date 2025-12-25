@@ -125,12 +125,15 @@ public static class Config
             .LoadFromConfig(configSection);
     }
 
+    /// <summary>
+    /// DataProtection keys
+    /// if not mounted /data it will be thrown away on each re-deploy
+    /// </summary>
     internal static void ConfigureDataProtection(this WebApplicationBuilder builder)
     {
-        if (!Path.Exists("/data"))
-            return;
+        var keysPath = Path.Exists("/data/keys") ? "/data/keys" : "/data";
 
         builder.Services.AddDataProtection()
-            .PersistKeysToFileSystem(new DirectoryInfo("/data"));
+            .PersistKeysToFileSystem(new DirectoryInfo(keysPath));
     }
 }
