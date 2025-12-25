@@ -131,7 +131,7 @@ public static class Config
     /// </summary>
     internal static void ConfigureDataProtection(this WebApplicationBuilder builder)
     {
-        var keysPath = Path.Exists("/data/keys") ? "/data/keys" : "/data";
+        var keysPath = Path.Exists("/data/keys/") ? "/data/keys/" : "/data/";
 
         builder.Services.AddDataProtection()
             .PersistKeysToFileSystem(new DirectoryInfo(keysPath));
